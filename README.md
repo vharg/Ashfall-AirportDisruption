@@ -9,7 +9,7 @@ Lerner, G. A., Teng, N. R. X., Jenkins, S. F., Lallemant, D., Tupper, A., Hayes,
 
 **General workflow to generate fragility functions using the script**
 
-1. Prepare data for fitting - requires 1) hazard intensity metric and 2) damage states
+1. Prepare data for fitting - requires 1) hazard intensity metric and 2) impact states
 - Select hazard intensity metric (HIM) e.g. ashfall thickness
 - Assign impact to impact states (IS) e.g. <1 day -> IS1; 1-2 days -> IS2
 
