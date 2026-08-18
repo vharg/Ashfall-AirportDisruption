@@ -13,12 +13,12 @@ Lerner, G. A., Teng, N. R. X., Jenkins, S. F., Lallemant, D., Tupper, A., Hayes,
 
 <br>
 
-1. Prepare data for fitting - requires 1) hazard intensity metric and 2) impact states
-  - Select hazard intensity metric (HIM) e.g. ashfall thickness
-  - Assign impact e.g. closure duration, to impact states (IS) e.g. <1 day -> IS1; 1-2 days -> IS2
-  - The impact states should be ordinal i.e. IS1 < IS2 < IS3 etc.
-  - The dataset for fitting should contain at least 2 columns for the HIM and IS ('ds' is the column name used in the script)
-  - Load dataset (edit line 15) and rename HIM column to 'him' (edit line 21)
+1. Prepare data for fitting - requires at least 2 columns: 1) hazard intensity metric and 2) impact states
+- Select hazard intensity metric (HIM) e.g. ashfall thickness
+- Assign impact e.g. closure duration, to impact states (IS) e.g. <1 day -> IS1; 1-2 days -> IS2
+- The impact states should be ordinal i.e. IS1 < IS2 < IS3 etc.
+- Load dataset (edit line 15) and rename HIM column to 'him' (edit line 21)
+- Note that 'ds' is the column name used for impact states in the script
 
 <br>
 
@@ -45,5 +45,5 @@ Lerner, G. A., Teng, N. R. X., Jenkins, S. F., Lallemant, D., Tupper, A., Hayes,
 <br>
 
 Others
-- Calculated frequency of each HIM value (line 23) to plot as bars within the fragility curve plot (line 130) 
-- Calculated frequency of each HIM-IS combination (line 29) to plot as point above the fragility curve plot (line 161)
+- Calculated frequency of each HIM value (line 23) to plot as bars within fragility curve plot (line 130) 
+- Calculated frequency of each HIM-IS combination (line 29) to plot as points above fragility curve plot (line 161)
