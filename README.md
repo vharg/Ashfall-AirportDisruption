@@ -14,11 +14,11 @@ Lerner, G. A., Teng, N. R. X., Jenkins, S. F., Lallemant, D., Tupper, A., Hayes,
 <br>
 
 1. Prepare data for fitting - requires 1) hazard intensity metric and 2) impact states
-- Select hazard intensity metric (HIM) e.g. ashfall thickness
-- Assign impact e.g. closure duration, to impact states (IS) e.g. <1 day -> IS1; 1-2 days -> IS2
-- The impact states should be ordinal i.e. IS1 < IS2 < IS3 etc.
-- The dataset for fitting should contain at least 2 columns for the HIM and IS ('ds' is the column name used in the script)
-- Load dataset (edit line 15) and rename HIM column to 'him' (edit line 21)
+  - Select hazard intensity metric (HIM) e.g. ashfall thickness
+  - Assign impact e.g. closure duration, to impact states (IS) e.g. <1 day -> IS1; 1-2 days -> IS2
+  - The impact states should be ordinal i.e. IS1 < IS2 < IS3 etc.
+  - The dataset for fitting should contain at least 2 columns for the HIM and IS ('ds' is the column name used in the script)
+  - Load dataset (edit line 15) and rename HIM column to 'him' (edit line 21)
 
 <br>
 
