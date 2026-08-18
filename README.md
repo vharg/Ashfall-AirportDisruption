@@ -32,8 +32,8 @@ Lerner, G. A., Teng, N. R. X., Jenkins, S. F., Lallemant, D., Tupper, A., Hayes,
 3. Calculate probabilities of equalling or exceeding each IS for a range of continuous HIM
 - Generate continuous HIM values (x-axis) for plotting fragility curves (edit line 51-55 as needed)
 - Use predict function to obtain linear predictor for continuous HIM values (line 61)
-- Apply the appropriate inverse link function to the linear predictor (pnorm for probit) to obtain probabilities
 - clmpred_log_IS5$eta2 represents the linear predictor for P(IS<x), and it is indexed using column numbers
+- Apply the appropriate inverse link function to the linear predictor (pnorm for probit) to obtain probabilities
 - 'mean' gives the probabilities of equalling or exceeding each IS (y-axis) for the fragility curves
 - 'lwr' and 'upr' gives the 68% confidence interval for each curve (due to uncertainty in the model parameters; set se.fit = TRUE in predict function to obtain standard errors)
 
