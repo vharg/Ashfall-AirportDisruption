@@ -14,18 +14,24 @@ Lerner, G. A., Teng, N. R. X., Jenkins, S. F., Lallemant, D., Tupper, A., Hayes,
 
 <br>
 
-1. Prepare data for fitting - requires at least 2 columns: 1) hazard intensity metric and 2) impact states
+1. Prepare data for fitting - requires at least 2 columns: 1) hazard intensity metric and 2) impact state
 - Select hazard intensity metric (HIM) e.g. ashfall thickness
 - Assign impact e.g. closure duration, to impact states (IS) e.g. <1 day -> IS1; 1-2 days -> IS2
 - The impact states should be ordinal i.e. IS1 < IS2 < IS3 etc.
 - Load dataset (edit line 15) and rename HIM column to 'him' (edit line 21)
 - Note that 'ds' is the column name used for impact states in the script
+- Example of data
+  | HIM - Thickness | Impact - Closure Duration | Impact State |
+  | :--------: | :--------: | :--------: |
+  | 1 mm | 1 hour | 1 |
+  | 10 mm | 1 day | 2 |
 
 <br>
 
 2. Fit data using cumulative link model (CLM)
 - Documentation for ordinal package: https://cran.r-project.org/web/packages/ordinal/index.html
 - Line 44: Specify relationship between IS and HIM e.g. impact state as a function of log(HIM): IS ~ log(HIM)
+- This relationship depends on the data used and its distribution
 
 <br>
 
@@ -34,6 +40,7 @@ Lerner, G. A., Teng, N. R. X., Jenkins, S. F., Lallemant, D., Tupper, A., Hayes,
 - Use predict function to obtain linear predictor for continuous HIM values (line 61)
 - clmpred_log_IS5$eta2 represents the linear predictor for P(IS<x), and it is indexed using column numbers
 - Apply the appropriate inverse link function to the linear predictor (pnorm for probit) to obtain probabilities
+- If there are additional IS i.e. IS6 and above, duplicate lines 67-71 and edit the IS and column index accordingly
 - 'mean' gives the probabilities of equalling or exceeding each IS (y-axis) for the fragility curves
 - 'lwr' and 'upr' gives the 68% confidence interval for each curve (due to uncertainty in the model parameters; set se.fit = TRUE in predict function to obtain standard errors)
 
@@ -42,6 +49,7 @@ Lerner, G. A., Teng, N. R. X., Jenkins, S. F., Lallemant, D., Tupper, A., Hayes,
 4. Plot the fragility curves 
 - x-axis = hazard intensity metric, y-axis = probability of equalling or exceeding IS
 - Edit line 111 onwards to customise plot elements e.g. axis title, colours etc.
+- Note that the current colour palette (line 119) has six colours only and will need to be adjusted if there are more or fewer impact states used
 
 <br>
 
